@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Lucas">
+	<meta name="description" content="Html principal">
+
+	<script>
+		function calc() {
+			var p1 = parseFloat(document.getElementById('p1').value);
+			var p2 = parseFloat(document.getElementById('p2').value);
+			var p3 = parseFloat(document.getElementById('p3').value);
+			var menornota = 99.99;
+			var maiornota = 0.0;
+
+			if (p1 < menornota) {
+				menornota = p1;
+			}
+			if (p2 < menornota) {
+				menornota = p2;
+			}
+
+			if (p1 > maiornota) {
+				maiornota = p1;
+			}
+			if (p2 > maiornota) {
+				maiornota = p2;
+			}
+
+			if (p3 == 0.0) {
+				document.getElementById('media').value = (p1 + p2) / 2;
+			} else if (p3 > menornota) {
+				document.getElementById('media').value = (p3 + maiornota) / 2;
+			} else {
+				document.getElementById('media').value = (p1 + p2) / 2;
+			}
+		}
+
+		function reset() {
+			document.getElementById('p1').value = null;
+			document.getElementById('p2').value = null;
+			document.getElementById('p3').value = null;
+			document.getElementById('media').value = null;
+		}
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>Ciencias e Sistemas</title>
+</head>
+
+<body>
+
+	<nav class="navbar">
+		<a href="../html/index.html">Inicio</a>
+		<a href="../html/disciplinas.html">Principais Disciplinas</a>
+		<a href="../html/atuar.html">Onde Atuar</a>
+		<a href="../html/calcular.html">Calcule Sua Nota</a>
+		<a href="../html/contato.html">Contato</a>
+	</nav>
+
+	<header class="header">
+		<h1>Calcule sua Nota</h1>
+		<h2>Utilize os formulários abaixo para realizar o cálculo</h2>
+	</header>
+
+	<main class="main content alternative">
+
+		<section class="coluna main-coluna">
+
+			<a class="article">
+
+				<div class="article-body">
+					<h2 class="article-title">
+						Insira suas notas:
+					</h2>
+
+					<fieldset class="config">
+						<p>
+							<label for="p1">Nota P1:</label><br/>
+							<input type="number" name="txtP1" id="p1" size="4" maxlenght="4" placeholder="P1" required>
+						</p><br>
+						<p>
+							<label for="p2">Nota P2:</label><br/>
+							<input type="number" name="txtP2" id="p2" size="4" maxlenght="4" placeholder="P2" required>
+						</p><br>
+						<p>
+							<label for="p3">Nota P3: (Se Houver)</label><br/>
+							<input type="number" name="txtP3" id="p3" size="4" min="4" maxlenght="4" placeholder="P3">
+						</p><br>
+						<p>
+							<label for="media">Média:</label><br/>
+							<input type="number" name="txtMedia" id="media" size="4" min="4" maxlenght="4" placeholder="Média" disabled>
+						</p><br>
+						<p>
+							<button onclick="calc();">Calcular</button>
+						</p>
+
+						<p>
+							<button onclick="reset();">Resetar</button>
+						</p>
+
+					</fieldset>
+
+					<footer class="article-info">
+						<span>by Lucas Dall'Acqua</span>
+						<span>Updated on 21/11/2017</span>
+					</footer>
+				</div>
+			</a>
+		</section>
+	</main>
+
+	<footer class="content">
+		<div class="footer">
+			<div id="navigation">
+				<ul>
+					<li>Copyright © - The Doors</li>
+				</ul>
+				<ul>
+					<li>Authors: Dall'Acqua</li>
+					<li>Leandro</li>
+					<li>Pedro</li>
+					<li>Sandro</li>
+					<li>Zambotti</li>
+					<li>Gabriel</li>
+				</ul>
+				<span id="logo">The Doors</span>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
